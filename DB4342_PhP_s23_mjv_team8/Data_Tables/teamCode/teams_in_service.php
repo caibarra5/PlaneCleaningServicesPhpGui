@@ -59,7 +59,7 @@
             
             //Insert into Student table;
             
-            $queryTeamInService  = "SELECT Tcode FROM plane WHERE SERdate=$date";
+            $queryTeamInService  = "SELECT Tcode FROM plane WHERE SERdate='$date'";
 
             if ($result = $conn->query($queryTeamInService)) { 
                 ?>
