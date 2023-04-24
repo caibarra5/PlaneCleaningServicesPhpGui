@@ -27,8 +27,8 @@
     <div class="container">
         <h1>Person_phone_number Menu: </h1>
 
-        <a href="create_person_phone_number.php">Create PERSON_PHONE_NUMBER</a><br>
-        <a href="view_person_phone_number.php">View, Modify, and Delete PERSON_PHONE_NUMBER</a><br>
+        <a href="create_person_phone_number.php">-Create PERSON_PHONE_NUMBER</a><br>
+        <a href="view_person_phone_number.php">-View, Modify, and Delete PERSON_PHONE_NUMBER</a><br>
             <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 

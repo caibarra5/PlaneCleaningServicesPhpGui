@@ -23,7 +23,7 @@
 
 <body>
     <div style="margin-top: 20px" class="container">
-        <h1>Find Team</h1>
+        <h1>Find teams in service</h1>
         <!-- styling of the form for bootstrap https://getbootstrap.com/docs/4.5/components/forms/ -->
         <form action="team_location.php" method="post">
         <div class="form-group">
@@ -43,12 +43,42 @@
         <!-- jQuery and JS bundle w/ Popper.js -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
     
     
     <?php
         session_start();
         require_once('../../config.php');
         require_once('../../validate_session.php');
+
+        $sql = "SELECT Tcode, Tstatus FROM TEAM where Tstatus = 'in service'";
+        if ($result = $conn->query($sql)) {
+        ?>
+            <table class="table" width=50%>
+                <thead>
+                    <td> Team Code</td>
+                    <td> Team Status</td>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($row = $result->fetch_row()) {
+                    ?>
+                        <tr>
+                        <td><?php printf("%s", $row[0]); ?></td>
+                            <td><?php printf("%s", $row[1]); ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        <?php
+        }
+        ?>
+<?php
+
+
+
         if (isset($_POST['Submit'])){
 
     

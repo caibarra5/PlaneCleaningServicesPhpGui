@@ -27,10 +27,12 @@
     <div class="container">
         <h1>Team Menu: </h1>
 
-        <a href="create_team.php">Create Team</a><br>
-        <a href="view_team.php">View, Modify, and Delete Team</a><br>
-        <a href="team_location.php">Find Team Location</a><br>
-        <a href="teams_in_service.php">Teams in Service at Given Time</a><br>
+        <a href="create_team.php">-Create Team</a><br>
+        <a href="view_team.php">-View, Modify, and Delete Team</a><br>
+        <a href="team_location.php">-Find Team Location</a><br>
+        <a href="teams_in_service.php">-Teams in Service at Given Time</a><br>
+        <a href="workers_in_service_per_team.php">-Number of Workers in service per team</a><br>
+        <a href="number_of_cleaning_teams.php">-Number of Cleaning Teams</a><br>
         <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 
