@@ -31,6 +31,7 @@
         <a href="view_plane.php">View, Modify, and Delete Plane</a><br>
         <a href="find_plane_location.php">Find Plane Location</a><br>
         <a href="view_overtime_teams.php">View Overtime Teams</a></br>
+        <a href="plane_cleaned.php">View Who Cleaned a Given Plane</a></br>
         <a href="../index.php">Back to Data_Tables Menu</a></br>
 
     </div>

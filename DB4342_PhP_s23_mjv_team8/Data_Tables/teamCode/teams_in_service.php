@@ -3,10 +3,10 @@
  * CS 4342 Database Management
  * @author Instruction team with contribution from L. Garnica and K. Apodaca
  * @version 2.0
- * Description: The purpose of these file is to provide PhP basic elements for an interface to access a DB. 
+ * Description: The purpose of these file is to show what teams are in service at a given time
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * This file inserts a new record  into the table Student of your DB.
+ * 
  */
 -->
 <!doctype html>
@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Find Plane Location</title>
+    <title>Teams in Service at Given Time</title>
 
     <!-- Importing Bootstrap CSS library https://getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
@@ -23,12 +23,12 @@
 
 <body>
     <div style="margin-top: 20px" class="container">
-        <h1>Find Plane</h1>
+        <h1>Teams in Service at Given Time</h1>
         <!-- styling of the form for bootstrap https://getbootstrap.com/docs/4.5/components/forms/ -->
-        <form action="find_plane_location.php" method="post">
+        <form action="teams_in_service.php" method="post">
         <div class="form-group">
-                <label for="plane_code">Plane Code</label>
-                <input class="form-control" type="text" id="plane_code" name="plane_code">
+                <label for="team_code">Date (YYYY-MM-DD)</label>
+                <input class="form-control" type="text" id="given_date" name="given_date">
             </div>
             
             <div class="form-group">
@@ -37,7 +37,7 @@
         </form>
         <div>
             <br>
-            <a href="plane_menu.php">Back to Plane Menu</a></br>
+            <a href="team_menu.php">Back to Team Menu</a></br>
         </div>
 
         <!-- jQuery and JS bundle w/ Popper.js -->
@@ -55,19 +55,17 @@
             /**
              * Grab information from the form submission and store values into variables.
              */
-            $plcode = isset($_POST['plane_code']) ? $_POST['plane_code'] : " ";  
+            $date = isset($_POST['given_date']) ? $_POST['given_date'] : " ";  
             
             //Insert into Student table;
             
-            $queryPlane  = "Select PLcode, PLgate, PLairport_code FROM plane WHERE PLcode =$plcode;";
+            $queryTeamInService  = "SELECT Tcode FROM plane WHERE SERdate=$date";
 
-            if ($result = $conn->query($queryPlane)) { 
+            if ($result = $conn->query($queryTeamInService)) { 
                 ?>
                         <table class="table" width=50%>
             <thead>
-                <td> Plane Code</td>
-                <td> Gate</td>
-                <td> Airport Code </td>
+                <td> Team Code</td>
             </thead>
             <tbody>
                 <?php
@@ -75,8 +73,6 @@
                 ?>
                     <tr>
                     <td><?php printf("%s", $row[0]); ?></td>
-                        <td><?php printf("%s", $row[1]); ?></td>
-                        <td><?php printf("%s", $row[2]); ?></td>
                     </tr>
                 <?php
                 }

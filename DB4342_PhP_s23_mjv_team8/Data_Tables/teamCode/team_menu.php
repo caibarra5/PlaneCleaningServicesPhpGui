@@ -29,7 +29,9 @@
 
         <a href="create_team.php">Create Team</a><br>
         <a href="view_team.php">View, Modify, and Delete Team</a><br>
-            <a href="../index.php">Back to Data_Tables Menu</a></br>
+        <a href="team_location.php">Find Team Location</a><br>
+        <a href="teams_in_service.php">Teams in Service at Given Time</a><br>
+        <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 
     <!-- jQuery and JS bundle w/ Popper.js -->
