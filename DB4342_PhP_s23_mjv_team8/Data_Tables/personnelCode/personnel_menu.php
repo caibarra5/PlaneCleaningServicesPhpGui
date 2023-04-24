@@ -27,8 +27,8 @@
     <div class="container">
         <h1>Personnel Menu: </h1>
 
-        <a href="create_personnel.php">Create Personnel</a><br>
-        <a href="view_personnel.php">View, Modify, and Delete Personnel</a><br>
+        <a href="create_personnel.php">-Create Personnel</a><br>
+        <a href="view_personnel.php">-View, Modify, and Delete Personnel</a><br>
             <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 

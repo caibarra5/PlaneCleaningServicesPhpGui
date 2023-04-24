@@ -27,11 +27,14 @@
     <div class="container">
         <h1>Plane Menu: </h1>
 
-        <a href="create_plane.php">Create Plane</a><br>
-        <a href="view_plane.php">View, Modify, and Delete Plane</a><br>
-        <a href="find_plane_location.php">Find Plane Location</a><br>
-        <a href="view_overtime_teams.php">View Overtime Teams</a></br>
-        <a href="plane_cleaned.php">View Who Cleaned a Given Plane</a></br>
+        <a href="create_plane.php">-Create Plane</a><br>
+        <a href="view_plane.php">-View, Modify, and Delete Plane</a><br>
+        <a href="find_plane_location.php">-Find Plane Location</a><br>
+        <a href="view_overtime_teams.php">-View Overtime Teams</a></br>
+        <a href="plane_cleaned.php">-View Who Cleaned a Given Plane</a></br>
+        <a href="r4_planes_cleaned_between_two_time_periods.php">-Choose Date Period Between Which Planes Were Cleaned</a></br>
+        <a href="r6_generate_report_of_plane_airport_code_group_for_specified_time_period.php">-Manager Report For Plane Info. Between Time Periods</a></br>
+        <a href="r8_generate_report_of_number_of_worker_and_available_workers.php">-Number of Worker, Number of Available Workers and List of Available Workers</a></br>
         <a href="../index.php">Back to Data_Tables Menu</a></br>
 
     </div>

@@ -3,10 +3,10 @@
  * CS 4342 Database Management
  * @author Instruction team with contribution from L. Garnica and K. Apodaca
  * @version 2.0
- * Description: The purpose of this file is to show a given team's location
+ * Description: The purpose of these file is to provide PhP basic elements for an interface to access a DB. 
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * Modified by Vazquez
+ * This file inserts a new record  into the table Student of your DB.
  */
 -->
 <!doctype html>
@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Find Team Location</title>
+    <title>Find Number of Workers In Service per Team</title>
 
     <!-- Importing Bootstrap CSS library https://getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
@@ -23,9 +23,9 @@
 
 <body>
     <div style="margin-top: 20px" class="container">
-        <h1>Find teams in service</h1>
+        <h1>Find Number of Workers In Service per Team</h1>
         <!-- styling of the form for bootstrap https://getbootstrap.com/docs/4.5/components/forms/ -->
-        <form action="team_location.php" method="post">
+        <form action="workers_in_service_per_team.php" method="post">
         <div class="form-group">
                 <label for="team_code">Team Code</label>
                 <input class="form-control" type="text" id="team_code" name="team_code">
@@ -43,42 +43,12 @@
         <!-- jQuery and JS bundle w/ Popper.js -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-
     
     
     <?php
         session_start();
         require_once('../../config.php');
         require_once('../../validate_session.php');
-
-        $sql = "SELECT Tcode, Tstatus FROM TEAM where Tstatus = 'in service'";
-        if ($result = $conn->query($sql)) {
-        ?>
-            <table class="table" width=50%>
-                <thead>
-                    <td> Team Code</td>
-                    <td> Team Status</td>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($row = $result->fetch_row()) {
-                    ?>
-                        <tr>
-                        <td><?php printf("%s", $row[0]); ?></td>
-                            <td><?php printf("%s", $row[1]); ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        <?php
-        }
-        ?>
-<?php
-
-
-
         if (isset($_POST['Submit'])){
 
     
@@ -89,21 +59,13 @@
             
             //Insert into Student table;
             
-            $queryTeamLocation  = "SELECT P.PLcode, P.PLgate, P.PLairport_code, P.SERdate
-            FROM plane AS P 
-            INNER JOIN team AS T 
-            ON P.PLcode = T.Tcode 
-            WHERE T.Tstatus = 'in service' AND T.Tcode = $Tcode;
-            ";
+            $queryTeam  = "select count(*) from employees_inservice where Tcode=$Tcode;";
 
-            if ($result = $conn->query($queryTeamLocation)) { 
+            if ($result = $conn->query($queryTeam)) { 
                 ?>
                         <table class="table" width=50%>
             <thead>
-                <td> Plane Code</td>
-                <td> Gate</td>
-                <td> Airport Code </td>
-                <td> Date </td>
+                <td> Number of in service workers</td>
             </thead>
             <tbody>
                 <?php
@@ -111,9 +73,6 @@
                 ?>
                     <tr>
                     <td><?php printf("%s", $row[0]); ?></td>
-                        <td><?php printf("%s", $row[1]); ?></td>
-                        <td><?php printf("%s", $row[2]); ?></td>
-                        <td><?php printf("%s", $row[3]); ?></td>
                     </tr>
                 <?php
                 }

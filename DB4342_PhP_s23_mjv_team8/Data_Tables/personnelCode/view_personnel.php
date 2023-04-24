@@ -45,7 +45,7 @@ require_once('../../validate_session.php');
                 <td> Birthmonth </td>
                 <td> Birthday </td>
                 <td> Gender </td>
-                <td> Salary </td>
+                <td> Salary per Month in $</td>
             </thead>
             <tbody>
                 <?php

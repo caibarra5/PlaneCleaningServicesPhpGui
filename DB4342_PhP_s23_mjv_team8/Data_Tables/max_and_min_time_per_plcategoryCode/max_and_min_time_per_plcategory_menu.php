@@ -27,8 +27,8 @@
     <div class="container">
         <h1>Max_and_min_time_per_plcategory Menu: </h1>
 
-        <a href="create_max_and_min_time_per_plcategory.php">Create MAX_AND_MIN_TIME_PER_PLCATEGORY</a><br>
-        <a href="view_max_and_min_time_per_plcategory.php">View, Modify, and Delete MAX_AND_MIN_TIME_PER_PLCATEGORY</a><br>
+        <a href="create_max_and_min_time_per_plcategory.php">-Create MAX_AND_MIN_TIME_PER_PLCATEGORY</a><br>
+        <a href="view_max_and_min_time_per_plcategory.php">-View, Modify, and Delete MAX_AND_MIN_TIME_PER_PLCATEGORY</a><br>
             <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 

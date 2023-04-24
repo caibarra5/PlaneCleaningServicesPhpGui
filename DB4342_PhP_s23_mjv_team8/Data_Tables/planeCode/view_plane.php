@@ -42,7 +42,7 @@ require_once('../../validate_session.php');
                 <td> Gate</td>
                 <td> Airport Code </td>
                 <td> Service Number</td>
-                <td> Duration</td>
+                <td> Duration (minutes)</td>
                 <td> Date</td>
                 <td> Team Code</td>
             </thead>

@@ -3,10 +3,10 @@
  * CS 4342 Database Management
  * @author Instruction team with contribution from L. Garnica and K. Apodaca
  * @version 2.0
- * Description: The purpose of this file is to show a given team's location
+ * Description: The purpose of this file is to tell the user what group cleaned a given plane, as well as where and when it happened.
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * Modified by Vazquez
+ * Modified by Vazquez 
  */
 -->
 <!doctype html>
@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Find Team Location</title>
+    <title>Select Planes Cleaned Between Specified Time Period</title>
 
     <!-- Importing Bootstrap CSS library https://getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
@@ -23,12 +23,16 @@
 
 <body>
     <div style="margin-top: 20px" class="container">
-        <h1>Find teams in service</h1>
+        <h1>Select Time Periods</h1>
         <!-- styling of the form for bootstrap https://getbootstrap.com/docs/4.5/components/forms/ -->
-        <form action="team_location.php" method="post">
+        <form action="r4_planes_cleaned_between_two_time_periods.php" method="post">
         <div class="form-group">
-                <label for="team_code">Team Code</label>
-                <input class="form-control" type="text" id="team_code" name="team_code">
+                <label for="begin_date">Begin Date (YYYY-MM-DD)</label>
+                <input class="form-control" type="text" id="begin_date" name="begin_date">
+            </div>
+        <div class="form-group">
+                <label for="end_date">End Date (YYYY-MM-DD)</label>
+                <input class="form-control" type="text" id="end_date" name="end_date">
             </div>
             
             <div class="form-group">
@@ -37,73 +41,37 @@
         </form>
         <div>
             <br>
-            <a href="team_menu.php">Back to Team Menu</a></br>
+            <a href="plane_menu.php">Back to Plane Menu</a></br>
         </div>
 
         <!-- jQuery and JS bundle w/ Popper.js -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-
     
     
     <?php
         session_start();
         require_once('../../config.php');
         require_once('../../validate_session.php');
-
-        $sql = "SELECT Tcode, Tstatus FROM TEAM where Tstatus = 'in service'";
-        if ($result = $conn->query($sql)) {
-        ?>
-            <table class="table" width=50%>
-                <thead>
-                    <td> Team Code</td>
-                    <td> Team Status</td>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($row = $result->fetch_row()) {
-                    ?>
-                        <tr>
-                        <td><?php printf("%s", $row[0]); ?></td>
-                            <td><?php printf("%s", $row[1]); ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        <?php
-        }
-        ?>
-<?php
-
-
-
         if (isset($_POST['Submit'])){
 
     
             /**
              * Grab information from the form submission and store values into variables.
              */
-            $Tcode = isset($_POST['team_code']) ? $_POST['team_code'] : " ";  
+            $begin_date = isset($_POST['begin_date']) ? $_POST['begin_date'] : " ";  
+            $end_date = isset($_POST['end_date']) ? $_POST['end_date'] : " ";  
             
             //Insert into Student table;
             
-            $queryTeamLocation  = "SELECT P.PLcode, P.PLgate, P.PLairport_code, P.SERdate
-            FROM plane AS P 
-            INNER JOIN team AS T 
-            ON P.PLcode = T.Tcode 
-            WHERE T.Tstatus = 'in service' AND T.Tcode = $Tcode;
-            ";
+            $queryPlaneCleaned  = "SELECT PLcode, SERdate FROM plane WHERE SERdate BETWEEN '$begin_date'AND '$end_date';";
 
-            if ($result = $conn->query($queryTeamLocation)) { 
+            if ($result = $conn->query($queryPlaneCleaned)) { 
                 ?>
                         <table class="table" width=50%>
             <thead>
                 <td> Plane Code</td>
-                <td> Gate</td>
-                <td> Airport Code </td>
-                <td> Date </td>
+                <td> Service Date </td>
             </thead>
             <tbody>
                 <?php
@@ -112,8 +80,6 @@
                     <tr>
                     <td><?php printf("%s", $row[0]); ?></td>
                         <td><?php printf("%s", $row[1]); ?></td>
-                        <td><?php printf("%s", $row[2]); ?></td>
-                        <td><?php printf("%s", $row[3]); ?></td>
                     </tr>
                 <?php
                 }

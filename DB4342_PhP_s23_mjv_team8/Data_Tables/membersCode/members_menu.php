@@ -27,9 +27,9 @@
     <div class="container">
         <h1>Members Menu: </h1>
 
-        <a href="create_members.php">Create MEMBERS</a><br>
-        <a href="view_members.php">View, Modify, and Delete MEMBERS</a><br>
-            <a href="../index.php">Back to Data_Tables Menu</a></br>
+        <a href="create_members.php">-Create MEMBERS</a><br>
+        <a href="view_members.php">-View, Modify, and Delete MEMBERS</a><br>
+        <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 
     <!-- jQuery and JS bundle w/ Popper.js -->
