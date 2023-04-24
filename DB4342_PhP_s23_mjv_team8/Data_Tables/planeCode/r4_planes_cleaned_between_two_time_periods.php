@@ -64,14 +64,13 @@
             
             //Insert into Student table;
             
-            $queryPlaneCleaned  = "SELECT PLcode, SERdate FROM plane WHERE SERdate BETWEEN '$begin_date'AND '$end_date';";
+            $queryPlaneCleaned  = "call plane_cleaned('$begin_date', '$end_date');";
 
             if ($result = $conn->query($queryPlaneCleaned)) { 
                 ?>
                         <table class="table" width=50%>
             <thead>
                 <td> Plane Code</td>
-                <td> Service Date </td>
             </thead>
             <tbody>
                 <?php
@@ -79,7 +78,6 @@
                 ?>
                     <tr>
                     <td><?php printf("%s", $row[0]); ?></td>
-                        <td><?php printf("%s", $row[1]); ?></td>
                     </tr>
                 <?php
                 }

@@ -3,10 +3,10 @@
  * CS 4342 Database Management
  * @author Instruction team with contribution from L. Garnica and K. Apodaca
  * @version 2.0
- * Description: The purpose of these file is to provide PhP basic elements for an interface to access a DB. 
+ * Description: The purpose of this file is to find the location of a given plane.
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * This file inserts a new record  into the table Student of your DB.
+ * Modified by Vazquez
  */
 -->
 <!doctype html>
@@ -59,7 +59,7 @@
             
             //Insert into Student table;
             
-            $queryPlane  = "Select PLcode, PLgate, PLairport_code FROM plane WHERE PLcode =$plcode;";
+            $queryPlane  = "call view_plane($plcode)";
 
             if ($result = $conn->query($queryPlane)) { 
                 ?>
