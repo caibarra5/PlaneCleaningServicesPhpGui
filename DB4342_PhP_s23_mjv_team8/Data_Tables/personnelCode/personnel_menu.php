@@ -29,6 +29,7 @@
 
         <a href="create_personnel.php">-Create Personnel</a><br>
         <a href="view_personnel.php">-View, Modify, and Delete Personnel</a><br>
+        <a href="r8_generate_report_of_number_of_worker_and_available_workers.php">-Number of Worker, Number of Available Workers and List of Available Workers</a></br>
             <a href="../index.php">Back to Data_Tables Menu</a></br>
     </div>
 

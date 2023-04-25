@@ -34,7 +34,6 @@
         <a href="plane_cleaned.php">-View Who Cleaned a Given Plane</a></br>
         <a href="r4_planes_cleaned_between_two_time_periods.php">-Choose Date Period Between Which Planes Were Cleaned</a></br>
         <a href="r6_generate_report_of_plane_airport_code_group_for_specified_time_period.php">-Manager Report For Plane Info. Between Time Periods</a></br>
-        <a href="r8_generate_report_of_number_of_worker_and_available_workers.php">-Number of Worker, Number of Available Workers and List of Available Workers</a></br>
         <a href="../index.php">Back to Data_Tables Menu</a></br>
 
     </div>

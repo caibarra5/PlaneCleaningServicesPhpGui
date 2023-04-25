@@ -86,7 +86,7 @@ require_once('../../validate_session.php');
     }
     ?>
 
-    <a href="plane_menu.php">Back to Plane Menu</a><br>
+    <a href="personnel_menu.php">Back to Personnel Menu</a><br>
 
 
 
