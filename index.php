@@ -28,12 +28,6 @@
     
     <h1>Select Subdirectory: </h1>
 
-    <a href="DB4342_PhP_caibarra5/index.php">caibarra5</a><br>
-    <a href="DB4342_PhP_taposh/index.php">Taposh</a><br>
-    <a href="DB4342_PhP_mpvargafierro/index.php">Maria</a><br>
-    <a href="DB4342_PhP_davazquez5/index.php">Dario</a><br>
-
-
     <a href="DB4342_PhP_s23_mjv_team8/index.php">Airplane_Cleaning_Services</a><br>
     
     
