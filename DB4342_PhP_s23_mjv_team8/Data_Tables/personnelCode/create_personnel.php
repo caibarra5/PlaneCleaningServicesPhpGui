@@ -3,10 +3,10 @@
  * CS 4342 Database Management
  * @author Instruction team with contribution from L. Garnica and K. Apodaca
  * @version 2.0
- * Description: The purpose of these file is to provide PhP basic elements for an interface to access a DB. 
+ * Description: The purpose of this file is to create a new personnel member.
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * This file inserts a new record  into the table Student of your DB.
+ * Modified by Vazquez
  */
 -->
 <!doctype html>
@@ -99,8 +99,7 @@
             
             //Insert into Student table;
             
-            $queryPersonnel  = "INSERT INTO PERSONNEL (PEssn, PEfname, PElname, PEstatus, PEbyear, PEbmonth, PEbday, PEgender, PEsalary)
-                        VALUES ('".$pessn."', '".$pefname."', '".$pelname."', '".$pestatus."', '".$pebyear."', '".$pebmonth."', '".$pebday."', '".$pegender."', '".$pesalary."');";
+            $queryPersonnel  = "call add_personnel('".$pessn."', '".$pefname."', '".$pelname."', '".$pestatus."', '".$pebyear."', '".$pebmonth."', '".$pebday."', '".$pegender."', '".$pesalary."');";
 
             // The query sent to the DB can be printed by not commenting the following row
             //echo $queryStudent;
