@@ -6,7 +6,7 @@
  * Description: The purpose of this file is to tell the user what group cleaned a given plane, as well as where and when it happened.
  * Resources: https://getbootstrap.com/docs/4.5/components/alerts/  -- bootstrap examples
  *
- * Modified by Vazquez 
+ * Modified by Chris 
  */
 -->
 <!doctype html>
